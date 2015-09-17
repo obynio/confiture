@@ -129,9 +129,7 @@ client.focused_inactive   $gray2   $gray2   #FFFFFF   #000000
 client.unfocused          $gray2   $gray2   #FFFFFF   #000000
 
 # Exec startup programs
-exec --no-startup-id /usr/local/bin/desktop 
-exec --no-startup-id synclient VertEdgeScroll=1
-
+exec feh --bg-fill '/home/sybiload/.wallpaper/.wall.png'  
 exec java -jar /home/sybiload/.pogo.jar -s
 
 # Custom shortcuts
@@ -141,13 +139,7 @@ bindsym F2 exec amixer -q set Master toggle && amixer -q set Speaker unmute && a
 bindsym F3 exec amixer -q set Master 2dB- unmute
 bindsym F4 exec amixer -q set Master 2dB+ unmute
 
-bindsym F5 exec light -U 10
-bindsym F6 exec light -A 10
-
-bindsym F7 exec /usr/local/bin/desktop
-bindsym F8 exec /usr/local/bin/lock
-
-bindsym F11 exec /usr/local/bin/bt
+bindsym F8 exec i3lock -c 000000 
 
 bindsym Mod1+1 exec thunar
 bindsym Mod1+2 exec google-chrome-stable
