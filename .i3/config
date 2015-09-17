@@ -129,12 +129,9 @@ client.focused_inactive   $gray2   $gray2   #FFFFFF   #000000
 client.unfocused          $gray2   $gray2   #FFFFFF   #000000
 
 # Exec startup programs
-exec --no-startup-id nm-applet
 exec --no-startup-id /usr/local/bin/desktop 
-exec --no-startup-id xss-lock -- /usr/local/bin/lock
 exec --no-startup-id synclient VertEdgeScroll=1
 
-exec xautolock -time 10 -locker '/usr/local/bin/lock'
 exec java -jar /home/sybiload/.pogo.jar -s
 
 # Custom shortcuts
@@ -144,8 +141,8 @@ bindsym F2 exec amixer -q set Master toggle && amixer -q set Speaker unmute && a
 bindsym F3 exec amixer -q set Master 2dB- unmute
 bindsym F4 exec amixer -q set Master 2dB+ unmute
 
-bindsym F5 exec xbacklight -dec 10 
-bindsym F6 exec xbacklight -inc 10
+bindsym F5 exec light -U 10
+bindsym F6 exec light -A 10
 
 bindsym F7 exec /usr/local/bin/desktop
 bindsym F8 exec /usr/local/bin/lock
