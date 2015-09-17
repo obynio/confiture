@@ -1,0 +1,47 @@
+
+if [ "$1" == "" ]; then
+    menu=( \
+#               labels            commands
+#           Main =========================i================
+		_____ 		  "dmenu_run -b -i"
+                chrome            "google-chrome-stable"
+                cmus              "terminator --command=cmus"
+                deluge            "deluge"
+                filezilla         "filezilla"
+		htop		  "terminator --command=htop"
+                power             "power"
+                terminator        "terminator"
+                thunar            "thunar"
+                vlc               "vlc"
+    )
+fi
+
+for (( count = 0 ; count < ${#menu[*]}; count++ )); do
+
+#   build two arrays, one for labels, the other for commands
+    temp=${menu[$count]}
+    if (( $count < ${#menu[*]}-2 )); then
+        temp+="\n"
+    fi
+    if (( "$count" % 2 == "0" )); then
+        menu_labels+=$temp
+    else
+        menu_commands+=$temp
+    fi
+
+done
+
+select=`echo -e $menu_labels | dmenu -b -i`
+
+if [ "$select" != "" ]; then
+
+#   fetch and clean the index of the selected label
+    index=`echo -e "${menu_labels[*]}" | grep -xnm1 $select | sed 's/:.*//'`
+    
+#   get the command which has the same index
+    part=`echo -e ${menu_commands[*]} | head -$index`
+    exe=`echo -e "$part" | tail -1`
+
+#   execute
+    $exe &
+fi

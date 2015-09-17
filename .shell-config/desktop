@@ -1,0 +1,19 @@
+#!/bin/bash
+
+IN="LVDS"
+EXT="HDMI-0"
+ONRES="1920x1080+1366+0"
+SCRRES="1920x1080"
+
+if (xrandr | grep "$EXT connected"); then
+    if (xrandr | grep "$ONRES"); then
+    	xrandr --auto --output $EXT --off
+    else
+	xrandr --auto --output $EXT --mode $SCRRES --right-of $IN
+	feh --bg-fill '/home/sybiload/.wallpaper/.wall.png' --bg-fill '/home/sybiload/.wallpaper/.wallbis.png'
+    fi
+else
+    xrandr --auto --output $EXT --off
+fi
+
+feh --bg-fill '/home/sybiload/.wallpaper/.wall.png'

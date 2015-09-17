@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# base dir for backlight class
+basedir="/sys/class/backlight/acpi_video0"
+
+# get the backlight handler
+handler=$basedir$(ls $basedir)"/"
+
+# get current brightness
+actual_brightness=$(cat $basedir/actual_brightness)
+
+# get max brightness
+max_brightness=$(cat $basedir/max_brightness)
+
+if [ "$1" == "--inc" ] && [ $actual_brightness -le "15" ]; then
+    final=$((actual_brightness+1))
+    tee $basedir/brightness <<< $final;
+elif [ "$1" == "--dec" ] && [ $actual_brightness -ge "0" ]; then
+    final=$((actual_brightness-1))
+    tee $basedir/brightness <<< $final;
+else
+    echo "Invalid argument";
+fi

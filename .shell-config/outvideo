@@ -1,0 +1,16 @@
+#!/bin/bash
+
+IN="LVDS"
+EXT="VGA-0"
+ONRES="1280x1024+1366+0"
+SCRRES="1280x1024"
+
+if (xrandr | grep "$EXT connected"); then
+    if (xrandr | grep "$ONRES"); then
+    	xrandr --auto --output $EXT --off
+    else
+	xrandr --auto --output $EXT --mode $SCRRES --right-of $IN
+    fi
+else
+    xrandr --auto --output $EXT --off
+fi
