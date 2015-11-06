@@ -55,6 +55,5 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/c.vim'
 
 call vundle#end()
