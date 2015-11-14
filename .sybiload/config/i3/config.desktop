@@ -129,8 +129,9 @@ client.focused_inactive   $gray2   $gray2   #FFFFFF   #000000
 client.unfocused          $gray2   $gray2   #FFFFFF   #000000
 
 # Exec startup programs
-exec feh --bg-fill '/home/sybiload/.wallpaper/.wall.png'  
-exec java -jar /home/sybiload/.pogo.jar -s
+exec feh --bg-fill '/home/sybiload/.sybiload/wallpaper/wall.png'  
+exec cd /home/sybiload/.sybiload/az0t && java -jar /home/sybiload/.sybiload/az0t/az0t.jar -m
+exec xflux -l 48.51 -g 2.35 -k 4000
 
 # Custom shortcuts
 bindsym Print exec scrot

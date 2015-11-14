@@ -1,10 +1,9 @@
 autoload -U compinit && compinit
 autoload -U promptinit && promptinit
 
-# setopt autocd
-
-# Aliases
-alias ls='ls --color=auto'
+# Misc
+setopt autocd
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Use Vim
 export EDITOR=/usr/bin/vim

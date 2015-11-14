@@ -129,7 +129,8 @@ client.focused_inactive   $gray2   $gray2   #FFFFFF   #000000
 client.unfocused          $gray2   $gray2   #FFFFFF   #000000
 
 # Exec startup programs
-exec --no-startup-id /usr/local/bin/desktop 
+exec feh --bg-fill '/home/sybiload/.sybiload/wallpaper/wall.png' 
+exec xflux -l 48.51 -g 2.35 -k 4000
 exec --no-startup-id synclient VertEdgeScroll=1
 
 # Custom shortcuts
