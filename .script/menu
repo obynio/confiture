@@ -1,9 +1,8 @@
 
 if [ "$1" == "" ]; then
-    menu=( \
-#               labels            commands
-#           Main =========================i================
+	menu=( \
 		_____ 		  "dmenu_run -b -i"
+                bomi              "bomi"
                 chrome            "google-chrome-stable"
                 cmus              "terminator --command=cmus"
                 deluge            "deluge"
@@ -12,36 +11,54 @@ if [ "$1" == "" ]; then
                 power             "power"
                 terminator        "terminator"
                 thunar            "thunar"
-                vlc               "vlc"
-    )
+	)
 fi
 
 for (( count = 0 ; count < ${#menu[*]}; count++ )); do
 
-#   build two arrays, one for labels, the other for commands
-    temp=${menu[$count]}
-    if (( $count < ${#menu[*]}-2 )); then
-        temp+="\n"
-    fi
-    if (( "$count" % 2 == "0" )); then
-        menu_labels+=$temp
-    else
-        menu_commands+=$temp
-    fi
+	# build two arrays, one for labels, the other for commands
+    	
+	temp=${menu[$count]}
+    	if (( $count < ${#menu[*]}-2 )); then
+		temp+="\n"
+    	fi
+
+    	if (( "$count" % 2 == "0" )); then
+        	menu_labels+=$temp
+    	else
+        	menu_commands+=$temp
+    	fi
 
 done
 
 select=`echo -e $menu_labels | dmenu -b -i`
 
-if [ "$select" != "" ]; then
+if [ "$select" == "power" ]; then
 
-#   fetch and clean the index of the selected label
-    index=`echo -e "${menu_labels[*]}" | grep -xnm1 $select | sed 's/:.*//'`
+	if [[ -f "$HOME/.dmenurc" ]]; then
+	    . "$HOME/.dmenurc"
+	else
+	    DMENU='dmenu -b -i'
+	fi
+
+	choice=$(echo -e "suspend\nshutdown\nreboot\nlogout" | $DMENU | cut -d ':' -f 1)
+
+	case "$choice" in
+	  suspend) /usr/bin/systemctl suspend & ;;
+	  shutdown) /usr/bin/systemctl poweroff & ;;
+	  reboot) /usr/bin/systemctl reboot & ;;
+	  logout) i3-msg exit & ;;
+	esac
+
+elif [ "$select" != "" ]; then
+
+	# fetch and clean the index of the selected label
+	index=`echo -e "${menu_labels[*]}" | grep -xnm1 $select | sed 's/:.*//'`
     
-#   get the command which has the same index
-    part=`echo -e ${menu_commands[*]} | head -$index`
-    exe=`echo -e "$part" | tail -1`
+	# get the command which has the same index
+	part=`echo -e ${menu_commands[*]} | head -$index`
+    	exe=`echo -e "$part" | tail -1`
 
-#   execute
-    $exe &
+	# execute
+    	$exe &
 fi
