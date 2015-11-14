@@ -1,0 +1,30 @@
+background		  no
+out_to_console    yes
+out_to_x          no
+update_interval   1
+total_run_times   0
+short_units       yes
+pad_percents      3
+ 
+override_utf8_locale yes
+if_up_strictness address
+
+TEXT
+
+[
+
+${if_match "${exec echo $(cmus-remote -Q | grep title | cut -d " " -f 3-)}" != ""}{"full_text": "   ${exec echo $(cmus-remote -Q | grep title | cut -d " " -f 3-)} - ${exec echo $(cmus-remote -Q | grep -m 1 artist | cut -d " " -f 3-)} "},
+$else{"full_text": " ${exec amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == "off") { print "   Mute" } else { print "   ",$2" %" }}'} "},$endif
+
+{"full_text": "   CPU $cpu % ","color": "\#6CA6CD"},
+{"full_text": "   RAM [$membar] ", "color":"\#B58900"},
+
+${if_up tun0}{"full_text": "   VPN on ","color":"\#33CC99"},
+$else{"full_text": "   VPN off ","color":"\#33CC99"},$endif
+
+${if_up eno1}{"full_text": "   Ethernet ","color":"\#33CC99"},
+$else{"full_text": "   Disconnected ","color":"\#33CC99"},$endif
+
+{"full_text": "   ${time %a %d %b} ${time %H:%M:%S} "}
+
+],
