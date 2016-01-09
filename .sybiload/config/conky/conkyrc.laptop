@@ -13,8 +13,7 @@ TEXT
 
 [
 
-${if_match "${exec echo $(cmus-remote -Q | grep title | cut -d " " -f 3-)}" != ""}{"full_text": "   ${exec echo $(cmus-remote -Q | grep title | cut -d " " -f 3-)} - ${exec echo $(cmus-remote -Q | grep -m 1 artist | cut -d " " -f 3-)} "},
-$else{"full_text": " ${exec amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == "off") { print "   Mute" } else { print "   ",$2" %" }}'} "},$endif
+{"full_text": "${exec amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == "off") { print "   Mute"  } else { print "   ",$2" %"  }}'} "},
 
 {"full_text": "   $battery_percent % ","color": "\#DB4437"},
 {"full_text": "   CPU $cpu % ","color": "\#6CA6CD"},

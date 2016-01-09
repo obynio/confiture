@@ -45,8 +45,8 @@ if [ "$select" == "power" ]; then
 
 	case "$choice" in
 	  suspend) /usr/bin/systemctl suspend & ;;
-	  shutdown) killall conky & /usr/bin/systemctl poweroff & ;;
-	  reboot) killall conky & /usr/bin/systemctl reboot & ;;
+	  shutdown) /usr/bin/systemctl poweroff & ;;
+	  reboot) /usr/bin/systemctl reboot & ;;
 	  logout) i3-msg exit & ;;
 	esac
 
