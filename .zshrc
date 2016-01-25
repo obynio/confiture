@@ -1,6 +1,6 @@
 # Loads every needed configuration file for zsh
 
-for file in ~/.zsh/*; do
+for file in ~/.sybiload/config/zsh/*; do
 	source $file;
 done
 

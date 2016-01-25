@@ -146,6 +146,7 @@ bindsym F6 exec light -A 10
 bindsym F8 exec i3lock -c 000000 
 
 bindsym F11 exec /usr/local/bin/bt
+bindsym F12 exec sudo /usr/local/bin/vpn
 
 bindsym Mod1+1 exec thunar
 bindsym Mod1+2 exec google-chrome-stable
