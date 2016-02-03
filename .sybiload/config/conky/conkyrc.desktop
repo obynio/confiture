@@ -13,16 +13,16 @@ TEXT
 
 [
 
-{"full_text": "${exec amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == "off") { print "   Mute"   } else { print "   ",$2" %"   }}'} "},
+{"full_text": "${exec amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == "off") { print "   mute"   } else { print "   ",$2" %"   }}'} "},
 
 {"full_text": "   CPU $cpu % ","color": "\#6CA6CD"},
 {"full_text": "   RAM [$membar] ", "color":"\#B58900"},
 
-${if_up tun0}{"full_text": "   VPN on ","color":"\#33CC99"},
-$else{"full_text": "   VPN off ","color":"\#33CC99"},$endif
+${if_up tun0}{"full_text": "   on ","color":"\#33CC99"},
+$else{"full_text": "   off ","color":"\#33CC99"},$endif
 
-${if_up eno1}{"full_text": "   Ethernet ","color":"\#33CC99"},
-$else{"full_text": "   Disconnected ","color":"\#33CC99"},$endif
+${if_up eno1}{"full_text": "   ethernet ","color":"\#33CC99"},
+$else{"full_text": "   disconnected ","color":"\#33CC99"},$endif
 
 {"full_text": "   ${time %a %d %b} ${time %H:%M:%S} "}
 

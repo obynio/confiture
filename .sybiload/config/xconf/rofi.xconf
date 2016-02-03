@@ -1,0 +1,17 @@
+rofi.modi:                 run,power:sh .sybiload/shell/power.sh
+rofi.lines:                5
+rofi.separator-style:	   none
+rofi.hide-scrollbar:       true
+rofi.width:                30
+rofi.font:				   Monospace 8
+rofi.fg:                   #969696
+rofi.bg:                   #333333
+rofi.hlfg:                 #FFB964
+rofi.hlbg:                 #333333
+rofi.bw:                   0
+rofi.terminal:             terminator
+rofi.run-shell-command:    {terminal} -e "{cmd}"
+rofi.eh:                   1
+rofi.auto-select:          false
+rofi.parse-hosts:          false
+rofi.pid:                  /run/user/1000/rofi.pid
