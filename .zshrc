@@ -1,4 +1,4 @@
-# Loads every needed configuration file for zsh
+# loads every needed configuration file for zsh
 
 for file in ~/.sybiload/config/zsh/*; do
 	source $file;
