@@ -31,8 +31,9 @@ set noerrorbells					" Prevent beep
 " Color
 let &t_Co=256						" Color issues
 syntax enable						" Syntax colors
-set background=dark					" Solarized stuff
-colorscheme solarized				" Solarized stuff
+set background=dark					" Color stuff
+colorscheme google				    " Color stuff
+
 
 filetype on
 filetype plugin on

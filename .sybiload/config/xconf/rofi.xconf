@@ -3,12 +3,12 @@ rofi.lines:                5
 rofi.separator-style:	   none
 rofi.hide-scrollbar:       true
 rofi.width:                30
-rofi.font:				   Monospace 8
-rofi.fg:                   #969696
-rofi.bg:                   #333333
-rofi.hlfg:                 #FFB964
-rofi.hlbg:                 #333333
-rofi.bw:                   0
+rofi.font:				   Meslo LG S DZ 9
+rofi.color-enabled: true
+rofi.color-window: #333333, #333333
+rofi.color-normal: #333333, #969696, #333333, #333333, #FFB964
+rofi.color-active: #333333, #969696, #333333, #333333, #FFB964
+rofi.color-urgent: #333333, #969696, #333333, #333333, #FFB964
 rofi.terminal:             terminator
 rofi.run-shell-command:    {terminal} -e "{cmd}"
 rofi.eh:                   1
