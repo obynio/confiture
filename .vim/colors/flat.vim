@@ -1,33 +1,26 @@
-" Base16 Solarized (https://github.com/chriskempson/base16)
-" Scheme: Ethan Schoonover (http://ethanschoonover.com/solarized)
-
-" This enables the coresponding base16-shell script to run so that
-" :colorscheme works in terminals supported by base16-shell scripts
-" User must set this variable in .vimrc
-"   let g:base16_shell_path=base16-builder/output/shell/
 if !has('gui_running')
   if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-solarized.".&background.".sh"
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16-flat.".&background.".sh"
   endif
 endif
 
 " GUI color definitions
-let s:gui00 = "002b36"
-let s:gui01 = "073642"
-let s:gui02 = "586e75"
-let s:gui03 = "657b83"
-let s:gui04 = "839496"
-let s:gui05 = "93a1a1"
-let s:gui06 = "eee8d5"
-let s:gui07 = "fdf6e3"
-let s:gui08 = "dc322f"
-let s:gui09 = "cb4b16"
-let s:gui0A = "b58900"
-let s:gui0B = "859900"
-let s:gui0C = "2aa198"
-let s:gui0D = "268bd2"
-let s:gui0E = "6c71c4"
-let s:gui0F = "d33682"
+let s:gui00 = "202D3A"
+let s:gui01 = "34495E"
+let s:gui02 = "7F8C8D"
+let s:gui03 = "95A5A6"
+let s:gui04 = "BDC3C7"
+let s:gui05 = "e0e0e0"
+let s:gui06 = "f5f5f5"
+let s:gui07 = "ECF0F1"
+let s:gui08 = "E74C3C"
+let s:gui09 = "E67E22"
+let s:gui0A = "F1C40F"
+let s:gui0B = "2ECC71"
+let s:gui0C = "1ABC9C"
+let s:gui0D = "3498DB"
+let s:gui0E = "9B59B6"
+let s:gui0F = "be643c"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -40,98 +33,35 @@ let s:cterm0B = "02"
 let s:cterm0C = "06"
 let s:cterm0D = "04"
 let s:cterm0E = "05"
-if exists('base16colorspace') && base16colorspace == "256"
-  let s:cterm01 = "18"
-  let s:cterm02 = "19"
-  let s:cterm04 = "20"
-  let s:cterm06 = "21"
-  let s:cterm09 = "16"
-  let s:cterm0F = "17"
-else
-  let s:cterm01 = "10"
-  let s:cterm02 = "11"
-  let s:cterm04 = "12"
-  let s:cterm06 = "13"
-  let s:cterm09 = "09"
-  let s:cterm0F = "14"
-endif
+let s:cterm01 = "10"
+let s:cterm02 = "11"
+let s:cterm04 = "12"
+let s:cterm06 = "13"
+let s:cterm09 = "09"
+let s:cterm0F = "14"
 
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-solarized"
+let g:colors_name = "flat"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)
   if a:guifg != ""
-    exec "hi " . a:group . " guifg=#" . s:gui(a:guifg)
+    exec "hi " . a:group . " guifg=#" . a:guifg
   endif
   if a:guibg != ""
-    exec "hi " . a:group . " guibg=#" . s:gui(a:guibg)
+    exec "hi " . a:group . " guibg=#" . a:guibg
   endif
   if a:ctermfg != ""
-    exec "hi " . a:group . " ctermfg=" . s:cterm(a:ctermfg)
+    exec "hi " . a:group . " ctermfg=" . a:ctermfg
   endif
   if a:ctermbg != ""
-    exec "hi " . a:group . " ctermbg=" . s:cterm(a:ctermbg)
+    exec "hi " . a:group . " ctermbg=" . a:ctermbg
   endif
   if a:attr != ""
     exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
   endif
-endfun
-
-" Return GUI color for light/dark variants
-fun s:gui(color)
-  if &background == "dark"
-    return a:color
-  endif
-
-  if a:color == s:gui00
-    return s:gui07
-  elseif a:color == s:gui01
-    return s:gui06
-  elseif a:color == s:gui02
-    return s:gui05
-  elseif a:color == s:gui03
-    return s:gui04
-  elseif a:color == s:gui04
-    return s:gui03
-  elseif a:color == s:gui05
-    return s:gui02
-  elseif a:color == s:gui06
-    return s:gui01
-  elseif a:color == s:gui07
-    return s:gui00
-  endif
-
-  return a:color
-endfun
-
-" Return terminal color for light/dark variants
-fun s:cterm(color)
-  if &background == "dark"
-    return a:color
-  endif
-
-  if a:color == s:cterm00
-    return s:cterm07
-  elseif a:color == s:cterm01
-    return s:cterm06
-  elseif a:color == s:cterm02
-    return s:cterm05
-  elseif a:color == s:cterm03
-    return s:cterm04
-  elseif a:color == s:cterm04
-    return s:cterm03
-  elseif a:color == s:cterm05
-    return s:cterm02
-  elseif a:color == s:cterm06
-    return s:cterm01
-  elseif a:color == s:cterm07
-    return s:cterm00
-  endif
-
-  return a:color
 endfun
 
 " Vim editor colors
@@ -146,7 +76,7 @@ call <sid>hi("IncSearch",     s:gui01, s:gui09, s:cterm01, s:cterm09, "none")
 call <sid>hi("Italic",        "", "", "", "", "none")
 call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "")
 call <sid>hi("MatchParen",    s:gui00, s:gui03, s:cterm00, s:cterm03,  "")
-call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "")
+call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm03, "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "")
 call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "")
 call <sid>hi("Search",        s:gui03, s:gui0A, s:cterm03, s:cterm0A,  "")
@@ -158,7 +88,6 @@ call <sid>hi("VisualNOS",     s:gui08, "", s:cterm08, "", "")
 call <sid>hi("WarningMsg",    s:gui08, "", s:cterm08, "", "")
 call <sid>hi("WildMenu",      s:gui08, "", s:cterm08, "", "")
 call <sid>hi("Title",         s:gui0D, "", s:cterm0D, "", "none")
-call <sid>hi("Conceal",       s:gui0D, s:gui00, s:cterm0D, s:cterm00, "")
 call <sid>hi("Cursor",        s:gui00, s:gui05, s:cterm00, s:cterm05, "")
 call <sid>hi("NonText",       s:gui03, "", s:cterm03, "", "")
 call <sid>hi("Normal",        s:gui05, s:gui00, s:cterm05, s:cterm00, "")
@@ -296,8 +225,6 @@ call <sid>hi("SpellRare",    "", s:gui00, "", s:cterm00, "undercurl")
 
 " Remove functions
 delf <sid>hi
-delf <sid>gui
-delf <sid>cterm
 
 " Remove color variables
 unlet s:gui00 s:gui01 s:gui02 s:gui03  s:gui04  s:gui05  s:gui06  s:gui07  s:gui08  s:gui09 s:gui0A  s:gui0B  s:gui0C  s:gui0D  s:gui0E  s:gui0F
