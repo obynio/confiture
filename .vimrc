@@ -31,9 +31,7 @@ set noerrorbells					" Prevent beep
 " Color
 let &t_Co=256						" Color issues
 syntax enable						" Syntax colors
-set background=dark					" Color stuff
-colorscheme google				    " Color stuff
-
+colorscheme confiture				" Color stuff
 
 filetype on
 filetype plugin on

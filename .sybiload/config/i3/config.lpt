@@ -145,7 +145,7 @@ bindsym $mod+d exec rofi -show run
 
 bar {
         position top
-        status_command $HOME/.sybiload/shell/conky.sh
+        status_command $HOME/.i3/conky_exec
         colors {
                 statusline $GREYM
                 background $GREYD

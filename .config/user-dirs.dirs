@@ -1,0 +1,6 @@
+XDG_TEMPLATES_DIR="/run/media/sybiload/DATA/dev"
+XDG_DOCUMENTS_DIR="/run/media/sybiload/DATA/documents"
+XDG_DOWNLOAD_DIR="/run/media/sybiload/DATA/downloads"
+XDG_MUSIC_DIR="/run/media/sybiload/DATA/music"
+XDG_PICTURES_DIR="/run/media/sybiload/DATA/pictures"
+XDG_VIDEOS_DIR="/run/media/sybiload/DATA/videos"

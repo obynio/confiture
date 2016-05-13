@@ -1,8 +1,0 @@
-<root>
-<username>326</username>
-<password>f206</password>
-<zeroshell>http://192.168.0.1:12082/cgi-bin/zscp</zeroshell>
-<delay>40</delay>
-<realm>arpej.com</realm>
-<section>CPGW</section>
-</root>
