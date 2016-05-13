@@ -37,9 +37,9 @@
 *.color14:      base0F
 *.color15:      base07
 
-urxvt.font: xft:Meslo LG S DZ:regular:pixelsize=12
-urxvt.boldfont: xft:Meslo LG S DZ:bold:pixelsize=12
-urxvt*letterSpace: -2
+urxvt.font: xft:Meslo LG S DZ:regular:pixelsize=13
+urxvt.boldfont: xft:Meslo LG S DZ:bold:pixelsize=13
+urxvt*letterSpace: -1
 urxvt.scrollBar: false
 urxvt*urgentOnBell: true
 urxvt*termName: rxvt
