@@ -149,7 +149,7 @@ bar {
         colors {
                 statusline $GREYM
                 background $GREYD
-                focused_workspace $GREYD $GREYD $BLACK
+                focused_workspace $GREYD $GREYD $WHITE
                 inactive_workspace $GREYL $GREYL $GREYM
         }
 }
