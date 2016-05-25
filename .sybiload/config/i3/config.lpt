@@ -1,7 +1,5 @@
 set $mod Mod4
 
-## original i3 config
-
 # Font for window titles.
 font pango:Meslo LG S DZ 9
 
@@ -9,31 +7,19 @@ font pango:Meslo LG S DZ 9
 floating_modifier $mod
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+m focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+M move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -45,6 +31,7 @@ bindsym $mod+f fullscreen
 bindsym $mod+e layout toggle split
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -78,7 +65,7 @@ bindsym $mod+Shift+agrave move container to workspace 10
 # config update
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Shift+e exit
 
 # resize window
 mode "resize" {
@@ -104,10 +91,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-## custom i3 config 
-
 # float
 for_window [title="File Operation Progress" class="Thunar"] floating enable
+
+# misc
+new_window pixel 2
 
 # colors
 set $GREYL #484848
