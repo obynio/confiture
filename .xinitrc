@@ -23,9 +23,8 @@ fi
 # startup
 sh ~/.sybiload/shell/wallpaper.sh&
 auto-xflux -k 4000&
-synclient VertEdgeScroll=1&
 export QT_STYLE_OVERRIDE=GTK+
 
 # exec window manager
 exec i3
-
+#exec bspwm -c ~/.sybiload/config/bspwm/bspwmrc
