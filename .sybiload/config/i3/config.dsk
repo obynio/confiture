@@ -104,9 +104,9 @@ set $GREYM #AAAAAA
 set $BLACK #000000
 set $WHITE #FFFFFF
  
-client.focused            $GREYL   $GREYL   $WHITE   $BLACK
-client.focused_inactive   $GREYD   $GREYD   $WHITE   $WHITE
-client.unfocused          $GREYD   $GREYD   $WHITE   $WHITE
+client.focused            $GREYL   $GREYL   $WHITE   $GREYL
+client.focused_inactive   $GREYD   $GREYD   $WHITE   $GREYD
+client.unfocused          $GREYD   $GREYD   $WHITE   $GREYD
 
 # exec startup programs
 exec feh --bg-fill '/home/sybiload/.sybiload/wallpaper/wall.png'  
