@@ -104,9 +104,9 @@ set $GREYM #AAAAAA
 set $BLACK #000000
 set $WHITE #FFFFFF
 
-client.focused            $GREYL   $GREYL   $WHITE   $BLACK
-client.focused_inactive   $GREYD   $GREYD   $WHITE   $WHITE
-client.unfocused          $GREYD   $GREYD   $WHITE   $WHITE
+client.focused            $GREYL   $GREYL   $WHITE   $GREYL
+client.focused_inactive   $GREYD   $GREYD   $WHITE   $GREYD
+client.unfocused          $GREYD   $GREYD   $WHITE   $GREYD
 
 # custom shortcuts
 bindsym Print exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%S.png
