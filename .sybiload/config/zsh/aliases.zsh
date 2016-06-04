@@ -2,6 +2,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls --color=auto'
+alias l='ls -Fh --color=auto'
+alias la='ls -AFh --color=auto'
+alias ll='ls -lFh --color=auto'
+alias lla='ls -lAFh --color=auto'
 
 # Fun aliases
 alias fuck='sudo'
