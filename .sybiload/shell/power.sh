@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ -z $@  ] 
 then
@@ -8,8 +8,8 @@ else
 
 	case "$POWER" in
 		"0 suspend") /usr/bin/systemctl suspend & ;;
-		"1 shutdown") killall conky && /usr/bin/systemctl poweroff & ;;
-		"2 reboot") killall conky && /usr/bin/systemctl reboot & ;;
+		"1 shutdown") /usr/bin/systemctl poweroff & ;;
+		"2 reboot") /usr/bin/systemctl reboot & ;;
 		"3 logout") i3-msg exit & ;;
 	esac
 fi

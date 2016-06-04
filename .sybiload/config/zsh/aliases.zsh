@@ -15,3 +15,6 @@ alias wallpaper='sh ~/.sybiload/shell/wallpaper.sh'
 # VPN
 alias vpn-on='sudo systemctl start openvpn@client.service'
 alias vpn-off='sudo systemctl stop openvpn@client.service'
+
+# Connman
+alias net='connmanctl'

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if (hciconfig | grep UP); then
     echo "power off" | bluetoothctl &
