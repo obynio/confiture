@@ -140,7 +140,7 @@ exec cd /home/sybiload/.sybiload/az0t && java -jar /home/sybiload/.sybiload/az0t
 bar {
         position top
         status_command sh ~/.sybiload/shell/conky.sh
-        separator_symbol "  "
+        separator_symbol " "
 		colors {
                 statusline $GREYM
                 background $GREYD
