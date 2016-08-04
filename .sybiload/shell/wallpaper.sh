@@ -9,7 +9,7 @@ fi
 
 while :
 do
-	$(echo > /dev/tcp/sybiload.com/80) > /dev/null 2>&1
+	$(echo > /dev/tcp/sybiload.com/80) &> /dev/null
 	result=$?
 	if [[ $result -eq 0  ]]; then
 		wget -q -O "$path" https://api.sybiload.com/sybiload/wallpaper.php
