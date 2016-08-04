@@ -47,7 +47,7 @@ do
 		then
 			titles[$index]="extend ${monitors[$entry_a]} -> ${monitors[$entry_b]}"
 			commands[$index]="xrandr --output ${monitors[$entry_a]} --auto \
-				--output ${monitors[$entry_b]} --auto --right-of ${monitors[$entry_a]}"
+				--output ${monitors[$entry_b]} --auto --above ${monitors[$entry_a]}"
 
 			index+=1
 		fi
