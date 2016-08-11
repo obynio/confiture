@@ -2,23 +2,31 @@
 
 " Misc
 set nocompatible					" Cancel Vi compatibility
-set hidden							" Hide files when opening other  eiles
-command! E Explore
-set noswapfile
-set mouse=a
+set hidden						" Hide files when opening other  eiles
+set noswapfile						" No swapfile when opening a file
+
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 "Editing
-set backspace=indent,eol,start		" Normal backspace behaviour
+set backspace=indent,eol,start				" Normal backspace behaviour
+set fileformat=unix					" For LF only character
 set smartindent						" Intelligent indentation
 set autoindent						" Keep indentation on a new line
-	
-" UI
-set title							" Updating vim title
-set cursorline						" Highlight the current line
-set number							" Line number
-set wrap							" Show long line on multiple lines?
 
-" Search
+" UI
+set title		    				" Updating vim title
+set cursorline						" Highlight the current line
+set number	    					" Line number
+set wrap    						" Show long line on multiple lines?
+
 set ignorecase						" Ignore case on search
 set smartcase						" Enable case sensitivity on search
 set incsearch						" Highlight search results while taping
@@ -31,28 +39,43 @@ set noerrorbells					" Prevent beep
 " Color
 let &t_Co=256						" Color issues
 syntax enable						" Syntax colors
-colorscheme confiture				" Color stuff
+colorscheme confiture					" Color stuff
 
-filetype on
-filetype plugin on
-filetype indent on
-
-" Indentation settings
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set noexpandtab
-
-" Color column for 80 chars limitation
-" set colorcolumn=80
+" Disable auto commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Vundle
+" Vundle stuff
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
+
+" Toggle autoindent on paste
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ UrxvtPaste()
+
+function! UrxvtPaste()
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
+endfunction
+
+" Default
+filetype on
+filetype plugin on
+filetype indent on
+
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+
+" Filetype
+autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2
