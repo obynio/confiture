@@ -35,7 +35,7 @@ alias net='connmanctl'
 
 # Dev
 alias gdb='gdb -q'
-alias gac='git add -A && git commit'
+alias gac='git add -A && git commit -m'
 alias bc='bc -ql'
 alias py='python'
 alias pi='python2'

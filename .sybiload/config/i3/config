@@ -113,9 +113,9 @@ client.unfocused          $GREYD   $GREYD   $WHITE   $GREYD
 bindsym Print exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%S.png
 
 bindsym F1 exec sh ~/.sybiload/shell/lock.sh
-bindsym F2 exec amixer -q set Master toggle && amixer -q set Speaker unmute && amixer -q set Headphone unmute
-bindsym F3 exec amixer -q set Master 2dB- unmute
-bindsym F4 exec amixer -q set Master 2dB+ unmute
+bindsym F2 exec sh ~/.sybiload/shell/alsa.sh -t 
+bindsym F3 exec sh ~/.sybiload/shell/alsa.sh -d
+bindsym F4 exec sh ~/.sybiload/shell/alsa.sh -i
 
 bindsym F5 exec light -U 10
 bindsym F6 exec light -A 10
