@@ -33,10 +33,10 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+Space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Space focus mode_toggle
 
 # switch to workspace
 bindsym $mod+ampersand workspace 1
@@ -110,26 +110,27 @@ client.focused_inactive   $GREYD   $GREYD   $WHITE   $GREYD
 client.unfocused          $GREYD   $GREYD   $WHITE   $GREYD
 
 # custom shortcuts
-bindsym Print exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%S.png
 
-bindsym F1 exec sh ~/.sybiload/shell/lock.sh
-bindsym F2 exec sh ~/.sybiload/shell/alsa.sh -t 
-bindsym F3 exec sh ~/.sybiload/shell/alsa.sh -d
-bindsym F4 exec sh ~/.sybiload/shell/alsa.sh -i
-
-bindsym F5 exec light -U 10
-bindsym F6 exec light -A 10
-bindsym F7 exec sh ~/.sybiload/shell/vpn.sh
-bindsym F8 exec sh ~/.sybiload/shell/bt.sh
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86KbdBrightnessDown exec kbdlight down 20
+bindsym XF86KbdBrightnessUp exec kbdlight up 20
+bindsym XF86AudioMute exec sh ~/.sybiload/shell/alsa.sh -t 
+bindsym XF86AudioLowerVolume exec sh ~/.sybiload/shell/alsa.sh -d
+bindsym XF86AudioRaiseVolume exec sh ~/.sybiload/shell/alsa.sh -i
+bindsym XF86Eject exec sh ~/.sybiload/shell/bt.sh
 
 bindsym Mod1+1 exec thunar
 bindsym Mod1+2 exec google-chrome-stable
 bindsym Mod1+3 exec urxvt -e cmus
 bindsym Mod1+4 exec urxvt -e htop
 
+bindsym $mod+BackSpace exec sh ~/.sybiload/shell/lock.sh
 bindsym $mod+Return exec urxvt
 bindsym $mod+a kill
 bindsym $mod+d exec rofi -show run
+bindsym $mod+p exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%S.png
+bindsym Print exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%S.png
 
 # startup
 
