@@ -1,8 +1,7 @@
 #!/bin/sh
 
 if (hciconfig | grep UP); then
-    echo "power off" | bluetoothctl &
+    connman disable bluetooth
 else
-    echo "power on" | bluetoothctl & 
+    connman enable bluetooth
 fi
-
