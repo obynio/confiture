@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if (hciconfig | grep UP); then
-    connman disable bluetooth
+    connmanctl disable bluetooth
 else
-    connman enable bluetooth
+    connmanctl enable bluetooth
 fi
