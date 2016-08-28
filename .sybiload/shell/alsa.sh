@@ -5,14 +5,13 @@ if [[ $# == 1 && ( $1 == '-t' || $1 == '-i' || $1 == '-d' ) ]]; then
     CURRENT_STATE=`amixer get Master | egrep 'Playback.*?\[o' | egrep -o '\[o.+\]'`
 
     if [[ $1 == '-t'  && $CURRENT_STATE == '[on]' ]]; then
-	amixer set Master mute
+	amixer set "Master" mute
     else
-	amixer set Surround unmute
-	amixer set Center unmute
-	amixer set LFE unmute
-	amixer set Master unmute
-	amixer set Front unmute
-	amixer set Headphone unmute
+    	# zelda alsa settings
+	amixer set "Master" unmute
+	amixer set "Headphone" unmute
+	amixer set "Bass Speaker" unmute
+	amixer set "Speaker" unmute
 
 	if [[ $1 == '-i' ]]; then
 	    amixer -q set Master 2dB+
