@@ -14,11 +14,11 @@ if [[ $# == 1 && ( $1 == '-t' || $1 == '-i' || $1 == '-d' ) ]]; then
 	amixer set "Speaker" unmute
 
 	if [[ $1 == '-i' ]]; then
-	    amixer -q set Master 2dB+
+	    amixer -q set "Master" 2dB+
 	fi
 
 	if [[ $1 == '-d' ]]; then
-	    amixer -q set Master 2dB-
+	    amixer -q set "Master" 2dB-
 	fi
     fi
 else
