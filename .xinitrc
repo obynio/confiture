@@ -4,7 +4,6 @@ xrdb -load ~/.sybiload/config/xres/xres.conf
 
 # startup
 sh ~/.sybiload/shell/wallpaper.sh&
-auto-xflux -k 4000&
 xcalib -d :0 ~/.sybiload/config/icc/osx.icc
 
 xset -dpms
