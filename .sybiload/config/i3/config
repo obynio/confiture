@@ -111,13 +111,13 @@ client.unfocused          $GREYD   $GREYD   $WHITE   $GREYD
 
 # custom shortcuts
 
-bindsym XF86MonBrightnessDown exec light -U 10
-bindsym XF86MonBrightnessUp exec light -A 10
-bindsym XF86KbdBrightnessDown exec kbdlight down 20
-bindsym XF86KbdBrightnessUp exec kbdlight up 20
-bindsym XF86AudioMute exec sh ~/.sybiload/shell/alsa.sh -t 
-bindsym XF86AudioLowerVolume exec sh ~/.sybiload/shell/alsa.sh -d
-bindsym XF86AudioRaiseVolume exec sh ~/.sybiload/shell/alsa.sh -i
+bindsym XF86MonBrightnessDown exec light -U 10				# F1
+bindsym XF86MonBrightnessUp exec light -A 10				# F2
+bindsym XF86KbdBrightnessDown exec kbdlight down 20			# F5
+bindsym XF86KbdBrightnessUp exec kbdlight up 20				# F6
+bindsym XF86AudioMute exec sh ~/.sybiload/shell/alsa.sh -t 		# F10
+bindsym XF86AudioLowerVolume exec sh ~/.sybiload/shell/alsa.sh -d	# F11
+bindsym XF86AudioRaiseVolume exec sh ~/.sybiload/shell/alsa.sh -i	# F12
 bindsym XF86Eject exec sh ~/.sybiload/shell/bt.sh
 
 bindsym Mod1+1 exec thunar
