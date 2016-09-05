@@ -133,8 +133,7 @@ bindsym $mod+p exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%
 bindsym Print exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%S.png
 
 # startup
-
-exec cd /home/sybiload/.sybiload/az0t && java -jar /home/sybiload/.sybiload/az0t/az0t.jar -m
+# exec cd /home/sybiload/.sybiload/az0t && java -jar /home/sybiload/.sybiload/az0t/az0t.jar -m
 
 # i3bar and conky settings for bar mode
 
