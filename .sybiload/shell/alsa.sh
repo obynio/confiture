@@ -12,6 +12,12 @@ if [[ $# == 1 && ( $1 == '-t' || $1 == '-i' || $1 == '-d' ) ]]; then
 	amixer set "Headphone" unmute
 	amixer set "Bass Speaker" unmute
 	amixer set "Speaker" unmute
+	
+	# mario settings
+	amixer set "Front" unmute
+	amixer set "Surround" unmute
+	amixer set "Center" unmute
+	amixer set "LFE" unmute
 
 	if [[ $1 == '-i' ]]; then
 	    amixer -q set "Master" 2dB+
