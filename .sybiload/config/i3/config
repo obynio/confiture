@@ -118,7 +118,6 @@ bindsym XF86KbdBrightnessUp exec kbdlight up 20				# F6
 bindsym XF86AudioMute exec sh ~/.sybiload/shell/alsa.sh -t 		# F10
 bindsym XF86AudioLowerVolume exec sh ~/.sybiload/shell/alsa.sh -d	# F11
 bindsym XF86AudioRaiseVolume exec sh ~/.sybiload/shell/alsa.sh -i	# F12
-bindsym XF86Eject exec sh ~/.sybiload/shell/bt.sh
 
 bindsym Mod1+1 exec thunar
 bindsym Mod1+2 exec google-chrome-stable
