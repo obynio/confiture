@@ -4,4 +4,8 @@ for file in ~/.sybiload/config/zsh/*; do
 	source $file;
 done
 
+if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
+  exec startx
+fi
+
 true
