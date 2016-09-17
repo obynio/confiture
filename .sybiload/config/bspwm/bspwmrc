@@ -1,17 +1,11 @@
 #!/bin/sh
 
-# custom init
-wmname i3
-setxkbmap fr
-feh --bg-scale ~/.sybiload/config/bspwm/wall.jpg
-xsetroot -cursor_name left_ptr
-
-sxhkd -c ~/.sybiload/config/bspwm/sxhkdrc&
-
 bspc config focus_follows_pointer true
+bspc config pointer_follows_monitor true
 
 bspc config border_width         2
-bspc config window_gap			12
+bspc config window_gap		10
+bspc config top_padding		40
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -19,5 +13,7 @@ bspc config gapless_monocle      true
 bspc config focus_by_distance    true
 bspc config history_aware_focus  true
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+bspc monitor HDMI-0 -d 1 2 3 4 5
+bspc monitor DP-1   -d 6 7 8 9 0
 
+bspc config padding_top		32
