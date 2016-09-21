@@ -9,6 +9,7 @@ alias la='ls -AFh --color=auto'
 alias ll='ls -lFh --color=auto'
 alias lla='ls -lAFh --color=auto'
 alias find='find . -name'
+alias cl='clear'
 alias sdisable=' sudo systemctl disable'
 alias senable='sudo systemctl enable'
 alias srestart='sudo systemctl restart'
@@ -18,8 +19,8 @@ alias sstatus='sudo systemctl status'
 # Fun aliases
 alias rtfm='man'
 alias nyan='telnet nyancat.dakko.us'
-alias fuck="killall -9"
-alias wtfinternet="ping -c 3 192.168.1.1;ping -c 3 www.google.com"
+alias fuck='killall -9'
+alias wtfinternet='ping -c 3 192.168.1.1;ping -c 3 www.google.com'
 
 # DIY aliases
 alias nsc='~/.sybiload/bin/nsc'
@@ -36,6 +37,8 @@ alias net='connmanctl'
 # Dev
 alias gdb='gdb -q'
 alias gac='git add -A && git commit -m'
+alias glg='git log --oneline'
+alias gtg='git tag -a $1 -m $2'
 alias bc='bc -ql'
 alias py='python'
 alias pi='python2'
