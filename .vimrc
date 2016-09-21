@@ -26,11 +26,11 @@ set title		    				" Updating vim title
 set cursorline						" Highlight the current line
 set number	    					" Line number
 set wrap    						" Show long line on multiple lines?
-
 set ignorecase						" Ignore case on search
 set smartcase						" Enable case sensitivity on search
 set incsearch						" Highlight search results while taping
 set hlsearch						" Highlight search results
+set showtabline=2					" Show the tab line on top
 
 " Beep
 set visualbell						" Prevent beep
