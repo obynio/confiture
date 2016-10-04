@@ -8,34 +8,27 @@ alias l='ls -Fh --color=auto'
 alias la='ls -AFh --color=auto'
 alias ll='ls -lFh --color=auto'
 alias lla='ls -lAFh --color=auto'
-alias find='find . -name'
-alias cl='clear'
 alias sdisable=' sudo systemctl disable'
 alias senable='sudo systemctl enable'
 alias srestart='sudo systemctl restart'
 alias sstart='sudo systemctl start'
 alias sstatus='sudo systemctl status'
+alias find='find . -name'
+alias cl='clear'
 
 # Fun aliases
 alias rtfm='man'
 alias nyan='telnet nyancat.dakko.us'
 alias fuck='killall -9'
+alias net='connmanctl'
 alias wtfinternet='ping -c 3 192.168.1.1;ping -c 3 www.google.com'
-
-# DIY aliases
 alias nsc='~/.sybiload/bin/nsc'
 alias i3lock='sh ~/.sybiload/shell/lock.sh &> /dev/null'
 alias wallpaper='sh ~/.sybiload/shell/wallpaper.sh &> /dev/null'
 
-# VPN
-alias vpnon='sudo systemctl start openvpn@client.service'
-alias vpnoff='sudo systemctl stop openvpn@client.service'
-
-# Connman
-alias net='connmanctl'
-
 # Dev
-alias gdb='gdb -q'
+alias gdb='gdb -q -tui'
+alias valgrind='sh ~/.sybiload/shell/valgrind.sh'
 alias gac='git add -A && git commit -m'
 alias glg='git log --oneline'
 alias gtg='git tag -a $1 -m $2'
