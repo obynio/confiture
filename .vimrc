@@ -20,6 +20,7 @@ set backspace=indent,eol,start				" Normal backspace behaviour
 set fileformat=unix					" For LF only character
 set smartindent						" Intelligent indentation
 set autoindent						" Keep indentation on a new line
+set ttymouse=urxvt                                      " Mouse set to urxvt mode
 
 " UI
 set title		    				" Updating vim title
