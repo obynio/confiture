@@ -1,27 +1,25 @@
 set $mod Mod1
 
-# Font for window titles.
+# font for window titles
 font pango:Meslo LG S DZ 10
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# use mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# change focus
+# change focus with hjkl
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# move focused window
+# move focused window with hjkl
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split in horizontal orientation
+# orientation spliting
 bindsym $mod+c split h
-
-# split in vertical orientation
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
@@ -32,73 +30,74 @@ bindsym $mod+e layout toggle split
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 
-# toggle tiling / floating
+# toggle tiling and floating windows
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# attribute workspace to outputs
+workspace 1 output HDMI-0
+workspace 2 output DP-1
+workspace 3 output HDMI-0
+workspace 4 output DP-1
+workspace 5 output HDMI-0
+workspace 6 output DP-1
+workspace 7 output HDMI-0
+workspace 8 output DP-1
+workspace 9 output HDMI-0
+workspace 10 output DP-1
+
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
+bindsym $mod+ampersand  workspace 1
+bindsym $mod+eacute     workspace 2
+bindsym $mod+quotedbl   workspace 3
 bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
+bindsym $mod+parenleft  workspace 5
+bindsym $mod+minus      workspace 6
+bindsym $mod+egrave     workspace 7
 bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+ccedilla   workspace 9
+bindsym $mod+agrave     workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2
+bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7
+bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
-# config update
+# interact with i3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
-# resize window
+# resize current windows
 mode "resize" {
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym m resize grow width 10 px or 10 ppt
+# resizing windows with hjkl
+    bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
+# back to normal with enter or escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-# float
+# float windows
 for_window [title="File Operation Progress" class="Thunar"] floating enable
 
-# misc
+# misc configuration
 new_window pixel 2
 workspace_auto_back_and_forth yes
 
-# colors
+# colors declaration
 set $GREYL #484848
 set $GREYD #333333
 set $GREYM #AAAAAA
@@ -109,39 +108,28 @@ client.focused            $GREYL   $GREYL   $WHITE   $GREYL
 client.focused_inactive   $GREYD   $GREYD   $WHITE   $GREYD
 client.unfocused          $GREYD   $GREYD   $WHITE   $GREYD
 
-# custom shortcuts
-
-bindsym XF86MonBrightnessDown exec light -U 10				# F1
-bindsym XF86MonBrightnessUp exec light -A 10				# F2
-bindsym XF86KbdBrightnessDown exec kbdlight down 20			# F5
-bindsym XF86KbdBrightnessUp exec kbdlight up 20				# F6
-bindsym XF86AudioMute exec sh ~/.sybiload/shell/alsa.sh -t 		# F10
-bindsym XF86AudioLowerVolume exec sh ~/.sybiload/shell/alsa.sh -d	# F11
-bindsym XF86AudioRaiseVolume exec sh ~/.sybiload/shell/alsa.sh -i	# F12
-
-bindsym Mod1+1 exec thunar
-bindsym Mod1+2 exec google-chrome-stable
-bindsym Mod1+3 exec urxvt -e cmus
-bindsym Mod1+4 exec urxvt -e htop
+# function key shortcuts
+bindsym F1 exec light -U 10			    # F1
+bindsym F2 exec light -A 10			    # F2
+bindsym F5 exec kbdlight down 20		    # F5
+bindsym F6 exec kbdlight up 20			    # F6
+bindsym F10 exec sh ~/.sybiload/shell/alsa.sh -t    # F10
+bindsym F11 exec sh ~/.sybiload/shell/alsa.sh -d    # F11
+bindsym F12 exec sh ~/.sybiload/shell/alsa.sh -i    # F12
 
 bindsym $mod+BackSpace exec sh ~/.sybiload/shell/lock.sh
 bindsym $mod+Return exec urxvt
 bindsym $mod+a kill
 bindsym $mod+d exec rofi -show run
 bindsym $mod+p exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%S.png
-bindsym Print exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%S.png
-
-# startup
-# exec cd /home/sybiload/.sybiload/az0t && java -jar /home/sybiload/.sybiload/az0t/az0t.jar -m
 
 # i3bar and conky settings for bar mode
-
 bar {
-        position top
+    position top
         status_command sh ~/.sybiload/shell/conky.sh
         separator_symbol " "
-		colors {
-                statusline $GREYM
+        colors {
+            statusline $GREYM
                 background $GREYD
                 focused_workspace $GREYD $GREYD $WHITE
                 inactive_workspace $GREYL $GREYL $GREYM

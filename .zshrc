@@ -1,11 +1,11 @@
 # loads every needed configuration file for zsh
 
 for file in ~/.sybiload/config/zsh/*; do
-	source $file;
+    source $file;
 done
 
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
-  exec startx
+    exec startx
 fi
 
 true
