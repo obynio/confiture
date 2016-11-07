@@ -26,6 +26,7 @@ set ttymouse=urxvt                                      " Mouse set to urxvt mod
 set title		    				" Updating vim title
 set cursorline						" Highlight the current line
 set number	    					" Line number
+set relativenumber                                      " Relative line number
 set wrap    						" Show long line on multiple lines?
 set ignorecase						" Ignore case on search
 set smartcase						" Enable case sensitivity on search
