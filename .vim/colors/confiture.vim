@@ -23,7 +23,7 @@ let s:gui02 = "2ecc71"
 let s:gui03 = "f1c40f"
 let s:gui04 = "03a9f4"
 let s:gui05 = "9b59b6"
-let s:gui06 = "3b546b"
+let s:gui06 = "507190"
 let s:gui07 = "e0e0e0"
 let s:gui08 = "293a4a"
 let s:gui09 = "e53935"
@@ -31,7 +31,7 @@ let s:gui10 = "4caf50"
 let s:gui11 = "ffa000"
 let s:gui12 = "1976e2"
 let s:gui13 = "e91e63"
-let s:gui14 = "607d8b"
+let s:gui14 = "00bfa4"
 let s:gui15 = "cfd8dc"
 
 " Theme setup
@@ -85,7 +85,7 @@ call <sid>hi("title",         s:gui04, "", s:cterm04, "", "none")
 call <sid>hi("cursor",        s:gui00, s:gui07, s:cterm00, s:cterm07, "")
 call <sid>hi("nontext",       s:gui08, "", s:cterm08, "", "")
 call <sid>hi("normal",        s:gui07, s:gui00, s:cterm07, s:cterm00, "")
-call <sid>hi("linenr",        s:gui15, s:gui00, s:cterm15, s:cterm00, "")
+call <sid>hi("linenr",        s:gui06, s:gui00, s:cterm06, s:cterm00, "")
 call <sid>hi("signcolumn",    s:gui08, s:gui10, s:cterm08, s:cterm10, "")
 call <sid>hi("specialkey",    s:gui08, "", s:cterm08, "", "")
 call <sid>hi("statusline",    s:gui12, s:gui11, s:cterm12, s:cterm11, "none")
@@ -94,7 +94,7 @@ call <sid>hi("vertsplit",     s:gui11, s:gui11, s:cterm11, s:cterm11, "none")
 call <sid>hi("colorcolumn",   "", s:gui10, "", s:cterm10, "none")
 call <sid>hi("cursorcolumn",  "", s:gui10, "", s:cterm10, "none")
 call <sid>hi("cursorline",    "", s:gui10, "", s:cterm08, "none")
-call <sid>hi("cursorlinenr",  s:gui15, s:gui08, s:cterm15, s:cterm08, "")
+call <sid>hi("cursorlinenr",  s:gui06, s:gui08, s:cterm06, s:cterm08, "")
 call <sid>hi("pmenu",         s:gui12, s:gui10, s:cterm12, s:cterm10, "none")
 call <sid>hi("pmenusel",      s:gui10, s:gui12, s:cterm10, s:cterm12, "")
 call <sid>hi("tabline",       s:gui08, s:gui10, s:cterm08, s:cterm10, "none")
@@ -106,7 +106,7 @@ call <sid>hi("Boolean",      s:gui09, "", s:cterm09, "", "")
 call <sid>hi("Character",    s:gui01, "", s:cterm01, "", "")
 call <sid>hi("Conditional",  s:gui05, "", s:cterm05, "", "")
 call <sid>hi("Constant",     s:gui09, "", s:cterm09, "", "")
-call <sid>hi("Comment",      s:gui14, "", s:cterm14, "", "")
+call <sid>hi("Comment",      s:gui06, "", s:cterm06, "", "")
 call <sid>hi("Define",       s:gui05, "", s:cterm05, "", "none")
 call <sid>hi("Delimiter",    s:gui14, "", s:cterm14, "", "")
 call <sid>hi("Float",        s:gui09, "", s:cterm09, "", "")
