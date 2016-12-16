@@ -1,9 +1,3 @@
-if !has('gui_running')
-  if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-flat.".&background.".sh"
-  endif
-endif
-
 " Terminal color definitions
 let s:cterm00 = "00"
 let s:cterm01 = "01"
@@ -23,45 +17,45 @@ let s:cterm14 = "14"
 let s:cterm15 = "15"
 
 " GUI color definitions
-let s:gui00 = "202D3A"
-let s:gui01 = "E74C3C"
-let s:gui02 = "2ECC71"
-let s:gui03 = "F1C40F"
-let s:gui04 = "03A9F4"
-let s:gui05 = "9B59B6"
-let s:gui06 = "FFC107"
-let s:gui07 = "E0E0E0"
-let s:gui08 = "293A4A"
-let s:gui09 = "E53935"
-let s:gui10 = "4CAF50"
-let s:gui11 = "FFC107"
-let s:gui12 = "1976D2"
-let s:gui13 = "E91E63"
-let s:gui14 = "81D4FA"
-let s:gui15 = "3B546B"
+let s:gui00 = "202d3a"
+let s:gui01 = "e74c3c"
+let s:gui02 = "2ecc71"
+let s:gui03 = "f1c40f"
+let s:gui04 = "03a9f4"
+let s:gui05 = "9b59b6"
+let s:gui06 = "3b546b"
+let s:gui07 = "e0e0e0"
+let s:gui08 = "293a4a"
+let s:gui09 = "e53935"
+let s:gui10 = "4caf50"
+let s:gui11 = "ffa000"
+let s:gui12 = "1976e2"
+let s:gui13 = "e91e63"
+let s:gui14 = "607d8b"
+let s:gui15 = "cfd8dc"
 
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "flat"
+let g:colors_name = "confiture"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)
-  if a:guifg != ""
-    exec "hi " . a:group . " guifg=#" . a:guifg
-  endif
-  if a:guibg != ""
-    exec "hi " . a:group . " guibg=#" . a:guibg
-  endif
-  if a:ctermfg != ""
-    exec "hi " . a:group . " ctermfg=" . a:ctermfg
-  endif
-  if a:ctermbg != ""
-    exec "hi " . a:group . " ctermbg=" . a:ctermbg
-  endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
-  endif
+    if a:guifg != ""
+        exec "hi " . a:group . " guifg=#" . a:guifg
+    endif
+    if a:guibg != ""
+        exec "hi " . a:group . " guibg=#" . a:guibg
+    endif
+    if a:ctermfg != ""
+        exec "hi " . a:group . " ctermfg=" . a:ctermfg
+    endif
+    if a:ctermbg != ""
+        exec "hi " . a:group . " ctermbg=" . a:ctermbg
+    endif
+    if a:attr != ""
+        exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+    endif
 endfun
 
 " vim editor colors
@@ -110,9 +104,9 @@ call <sid>hi("tablinesel",    s:gui02, s:gui10, s:cterm02, s:cterm10, "none")
 " Standard syntax highlighting
 call <sid>hi("Boolean",      s:gui09, "", s:cterm09, "", "")
 call <sid>hi("Character",    s:gui01, "", s:cterm01, "", "")
-call <sid>hi("Comment",      s:gui08, "", s:cterm08, "", "")
 call <sid>hi("Conditional",  s:gui05, "", s:cterm05, "", "")
 call <sid>hi("Constant",     s:gui09, "", s:cterm09, "", "")
+call <sid>hi("Comment",      s:gui14, "", s:cterm14, "", "")
 call <sid>hi("Define",       s:gui05, "", s:cterm05, "", "none")
 call <sid>hi("Delimiter",    s:gui14, "", s:cterm14, "", "")
 call <sid>hi("Float",        s:gui09, "", s:cterm09, "", "")
@@ -121,12 +115,15 @@ call <sid>hi("Identifier",   s:gui01, "", s:cterm01, "", "none")
 call <sid>hi("Include",      s:gui04, "", s:cterm04, "", "")
 call <sid>hi("Keyword",      s:gui05, "", s:cterm05, "", "")
 call <sid>hi("Label",        s:gui03, "", s:cterm03, "", "")
-call <sid>hi("Number",       s:gui09, "", s:cterm09, "", "")
+call <sid>hi("MatchParen",   "", s:gui07, "", s:cterm07, "bold")
+call <sid>hi("Number",       s:gui13, "", s:cterm13, "", "")
+call <sid>hi("Boolean",      s:gui13, "", s:cterm13, "", "")
+call <sid>hi("Float",        s:gui13, "", s:cterm13, "", "")
 call <sid>hi("Operator",     s:gui07, "", s:cterm07, "", "none")
 call <sid>hi("PreProc",      s:gui03, "", s:cterm03, "", "")
 call <sid>hi("Repeat",       s:gui03, "", s:cterm03, "", "")
 call <sid>hi("Special",      s:gui06, "", s:cterm06, "", "")
-call <sid>hi("SpecialChar",  s:gui14, "", s:cterm14, "", "")
+call <sid>hi("SpecialChar",  s:gui13, "", s:cterm13, "", "")
 call <sid>hi("Statement",    s:gui01, "", s:cterm01, "", "")
 call <sid>hi("StorageClass", s:gui03, "", s:cterm03, "", "")
 call <sid>hi("String",       s:gui02, "", s:cterm02, "", "")
@@ -139,7 +136,8 @@ call <sid>hi("Typedef",      s:gui03, "", s:cterm03, "", "")
 " C highlighting
 call <sid>hi("cOperator",   s:gui06, "", s:cterm06, "", "")
 call <sid>hi("cPreCondit",  s:gui05, "", s:cterm05, "", "")
-call <sid>hi("cType",       s:gui11, "", s:cterm11, "", "")
+call <sid>hi("cType",       s:gui03, "", s:cterm03, "", "")
+call <sid>hi("cStatement",       s:gui03, "", s:cterm03, "", "")
 
 " CSS highlighting
 call <sid>hi("cssBraces",      s:gui07, "", s:cterm07, "", "")
@@ -160,7 +158,7 @@ call <sid>hi("DiffRemoved",  s:gui01, s:gui00,  s:cterm01, s:cterm00, "")
 " Git highlighting
 call <sid>hi("gitCommitOverflow",  s:gui01, "", s:cterm01, "", "")
 call <sid>hi("gitCommitSummary",   s:gui02, "", s:cterm02, "", "")
-  
+
 " GitGutter highlighting
 call <sid>hi("GitGutterAdd",     s:gui02, s:gui10, s:cterm02, s:cterm10, "")
 call <sid>hi("GitGutterChange",  s:gui04, s:gui10, s:cterm04, s:cterm10, "")
