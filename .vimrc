@@ -26,7 +26,6 @@ set ttymouse=urxvt                                      " Mouse set to urxvt mod
 set title		    				" Updating vim title
 set cursorline						" Highlight the current line
 set number	    					" Line number
-set relativenumber                                      " Relative line number
 set wrap    						" Show long line on multiple lines?
 set ignorecase						" Ignore case on search
 set smartcase						" Enable case sensitivity on search
@@ -40,8 +39,8 @@ set noerrorbells					" Prevent beep
 
 " Color
 let &t_Co=256						" Color issues
-syntax enable						" Syntax colors
 colorscheme confiture					" Color stuff
+syntax enable						" Syntax colors
 
 " Disable auto commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
