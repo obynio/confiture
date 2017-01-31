@@ -78,6 +78,9 @@ set tabstop=8
 set softtabstop=4
 set shiftwidth=4
 
+" Autoscroll mode
+set scrolloff=20
+
 " Filetype
 autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2
