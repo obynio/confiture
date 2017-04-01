@@ -11,10 +11,10 @@ simpler:
 echo '[],'
 
 # Now send blocks with information forever:
-if [[ $HOSTNAME == "mario" ]]; then
+if [[ $HOSTNAME == "trinity" ]]; then
 	exec conky -c ~/.sybiload/config/conky/desktop.conf
 fi
 
-if [[ $HOSTNAME == "zelda" ]]; then
+if [[ $HOSTNAME == "morpheus" ]]; then
 	exec conky -c ~/.sybiload/config/conky/laptop.conf
 fi
