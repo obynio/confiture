@@ -4,12 +4,13 @@
 xset -dpms
 xset s off
 xset s noblank
+xset b off
 
 # load xres config files
-xrdb -load ~/.sybiload/config/xres/xres.conf
+xrdb -load ~/.shepard/config/xres/xres.conf
 
 # launch startup scripts
-sh ~/.sybiload/shell/wallpaper.sh &
+sh ~/.shepard/shell/wallpaper.sh &
 
 # exec the world's best windows manager
-exec i3 -c ~/.sybiload/config/i3/config
+exec i3 -c ~/.shepard/config/i3/config

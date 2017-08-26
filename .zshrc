@@ -1,6 +1,6 @@
 # loads every needed configuration file for zsh
 
-for file in ~/.sybiload/config/zsh/*; do
+for file in ~/.shepard/config/zsh/*; do
     source $file;
 done
 
