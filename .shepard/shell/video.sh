@@ -1,6 +1,6 @@
 #!/bin/sh
 
-path=~/.sybiload/wallpaper/wall.jpg
+path=~/.shepard/wallpaper/wall.jpg
 
 xrandr=$(which xrandr)
 monitors=( $( ${xrandr} | awk '( $2 == "connected" ){ print $1 }' ) )

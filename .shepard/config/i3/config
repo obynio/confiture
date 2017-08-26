@@ -1,7 +1,7 @@
 set $mod Mod1
 
 # font for window titles
-font pango:Meslo LG S DZ 10
+font pango:Meslo LG S DZ 16
 
 # use mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -34,29 +34,17 @@ bindsym $mod+w layout tabbed
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-# attribute workspace to outputs
-workspace 1 output HDMI-0
-workspace 2 output DP-1
-workspace 3 output HDMI-0
-workspace 4 output DP-1
-workspace 5 output HDMI-0
-workspace 6 output DP-1
-workspace 7 output HDMI-0
-workspace 8 output DP-1
-workspace 9 output HDMI-0
-workspace 10 output DP-1
-
 # switch to workspace
-bindsym $mod+ampersand  workspace 1
-bindsym $mod+eacute     workspace 2
-bindsym $mod+quotedbl   workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft  workspace 5
-bindsym $mod+minus      workspace 6
-bindsym $mod+egrave     workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla   workspace 9
-bindsym $mod+agrave     workspace 10
+bindsym $mod+1  workspace 1
+bindsym $mod+2  workspace 2
+bindsym $mod+3  workspace 3
+bindsym $mod+4  workspace 4
+bindsym $mod+5  workspace 5
+bindsym $mod+6  workspace 6
+bindsym $mod+7  workspace 7
+bindsym $mod+8  workspace 8
+bindsym $mod+9  workspace 9
+bindsym $mod+0  workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -99,6 +87,7 @@ workspace_auto_back_and_forth yes
 
 # colors declaration
 set $GREYL #666666
+set $GREYS #444444
 set $GREYD #333333
 set $GREYM #AAAAAA
 set $BLACK #000000
@@ -106,32 +95,20 @@ set $WHITE #FFFFFF
 
 client.focused            $GREYL   $GREYL   $WHITE   $GREYL
 client.focused_inactive   $GREYD   $GREYD   $WHITE   $GREYD
-client.unfocused          $GREYD   $GREYD   $WHITE   $GREYD
+client.unfocused          $GREYS   $GREYS   $WHITE   $GREYS
 
 # function key shortcuts
-bindsym F1 exec light -U 10			    # F1
-bindsym F2 exec light -A 10			    # F2
-bindsym F5 exec kbdlight down 20		    # F5
-bindsym F6 exec kbdlight up 20			    # F6
-bindsym F10 exec sh ~/.sybiload/shell/alsa.sh -t    # F10
-bindsym F11 exec sh ~/.sybiload/shell/alsa.sh -d    # F11
-bindsym F12 exec sh ~/.sybiload/shell/alsa.sh -i    # F12
+bindsym XF86MonBrightnessDown   exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp     exec xbacklight -inc 5
+bindsym XF86AudioMute           exec sh ~/.shepard/shell/alsa.sh -t
+bindsym XF86AudioLowerVolume    exec sh ~/.shepard/shell/alsa.sh -d
+bindsym XF86AudioRaiseVolume    exec sh ~/.shepard/shell/alsa.sh -i
+bindsym XF86AudioMicMute        exec amixer set Capture toggle
 
-bindsym $mod+BackSpace exec sh ~/.sybiload/shell/lock.sh
+bindsym $mod+BackSpace exec sh ~/.shepard/shell/lock.sh
 bindsym $mod+Return exec urxvt
-bindsym $mod+a kill
+bindsym $mod+q kill
 bindsym $mod+d exec rofi -show run
-bindsym $mod+p exec scrot -q 100 /run/media/sybiload/DATA/pictures/%m:%d_%H:%M:%S.png
+bindsym $mod+p exec scrot -q 100 /data/pictures/%m:%d_%H:%M:%S.png
 
-# i3bar and conky settings for bar mode
-bar {
-    position top
-        status_command sh ~/.sybiload/shell/conky.sh
-        separator_symbol " "
-        colors {
-            statusline $GREYM
-                background $GREYD
-                focused_workspace $GREYD $GREYD $WHITE
-                inactive_workspace $GREYD $GREYD $GREYL
-        }
-}
+exec_always --no-startup-id ~/.shepard/shell/polybar.sh

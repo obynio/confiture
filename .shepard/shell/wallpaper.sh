@@ -1,6 +1,6 @@
 #!/bin/sh
 
-path=~/.sybiload/wallpaper/wall.jpg
+path=~/.shepard/wallpaper/wall.jpg
 
 if [ -f "$path" ];
 then
@@ -12,7 +12,7 @@ do
 	$(echo > /dev/tcp/sybiload.com/80) &> /dev/null
 	result=$?
 	if [[ $result -eq 0  ]]; then
-		wget -q -O "$path" https://api.sybiload.com/sybiload/wallpaper.php
+		wget -q -O "$path" https://api.sybiload.com/sybiload/wallpaper.php?theme=minimalist
 		break
 	fi
 	sleep 1

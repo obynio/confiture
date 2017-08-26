@@ -7,14 +7,7 @@ echo '{"version":1}'
 echo '['
 
 # We send an empty first array of blocks to make the loop 
-simpler:
 echo '[],'
 
 # Now send blocks with information forever:
-if [[ $HOSTNAME == "trinity" ]]; then
-	exec conky -c ~/.sybiload/config/conky/desktop.conf
-fi
-
-if [[ $HOSTNAME == "morpheus" ]]; then
-	exec conky -c ~/.sybiload/config/conky/laptop.conf
-fi
+exec conky -c ~/.shepard/config/conky/laptop.conf
