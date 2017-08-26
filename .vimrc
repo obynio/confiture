@@ -52,7 +52,6 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 
