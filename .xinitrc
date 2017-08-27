@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# to have numix icon theme on Qt
+# first set icon-theme to 'Numix' in org>gnome>desktop>interface with dconf-editor
+export DESKTOP_SESSION=gnome
+
 # disable screen sleep timer
 xset -dpms
 xset s off
