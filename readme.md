@@ -20,11 +20,10 @@ These configuration files support :
 
 I build it myself.
 
-# Thanks to
+# Special thanks to
 
-Confiture, because I like jam.
-
-All the nice guys out there that shares their dotfiles, because sharing is knowledge.
+* *La confiture*, because I like jam.
+* All the nice guys out there that shares their dotfiles. Love you guys !
 
 # Preview
 
