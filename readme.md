@@ -17,11 +17,13 @@ These configuration files support :
 # FAQ
 
 > Awesome vim colorscheme ! Where did you found it ?
+
 I build it myself.
 
 # Thanks to
 
 Confiture, because I like jam.
+
 All the nice guys out there that shares their dotfiles, because sharing is knowledge.
 
 # Preview
