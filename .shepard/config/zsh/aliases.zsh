@@ -23,6 +23,7 @@ alias net='connmanctl'
 alias wtfinternet='ping -c 3 192.168.1.1;ping -c 3 www.google.com'
 alias nsc='~/.shepard/bin/nsc'
 alias i3lock='sh ~/.shepard/shell/lock.sh &> /dev/null'
+alias dick='docker'
 alias wallpaper='sh ~/.shepard/shell/wallpaper.sh &> /dev/null'
 
 # Dev
