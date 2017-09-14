@@ -12,7 +12,7 @@ do
 	$(echo > /dev/tcp/sybiload.com/80) &> /dev/null
 	result=$?
 	if [[ $result -eq 0  ]]; then
-		wget -q -O "$path" https://api.sybiload.com/sybiload/wallpaper.php?theme=minimalist
+		wget -q -O "$path" https://api.obyn.io/wallpaper.php?theme=minimalist
 		break
 	fi
 	sleep 1
