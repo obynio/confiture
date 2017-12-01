@@ -7,4 +7,5 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-polybar -c ~/.shepard/config/polybar/config top &
+MONITOR=HDMI-0 polybar -c ~/.shepard/config/polybar/config top &
+MONITOR=DP-1 polybar -c ~/.shepard/config/polybar/config top &

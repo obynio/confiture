@@ -34,6 +34,18 @@ bindsym $mod+w layout tabbed
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
+# attribute workspace to outputs
+workspace 1 output HDMI-0
+workspace 2 output DP-1
+workspace 3 output HDMI-0
+workspace 4 output DP-1
+workspace 5 output HDMI-0
+workspace 6 output DP-1
+workspace 7 output HDMI-0
+workspace 8 output DP-1
+workspace 9 output HDMI-0
+workspace 10 output DP-1
+
 # switch to workspace
 bindsym $mod+1  workspace 1
 bindsym $mod+2  workspace 2
@@ -98,12 +110,10 @@ client.focused_inactive   $GREYD   $GREYD   $WHITE   $GREYD
 client.unfocused          $GREYS   $GREYS   $WHITE   $GREYS
 
 # function key shortcuts
-bindsym XF86MonBrightnessDown   exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp     exec xbacklight -inc 5
-bindsym XF86AudioMute           exec sh ~/.shepard/shell/alsa.sh -t
-bindsym XF86AudioLowerVolume    exec sh ~/.shepard/shell/alsa.sh -d
-bindsym XF86AudioRaiseVolume    exec sh ~/.shepard/shell/alsa.sh -i
-bindsym XF86AudioMicMute        exec amixer set Capture toggle
+bindsym F1  exec sh ~/.shepard/shell/alsa.sh -t
+bindsym F2  exec sh ~/.shepard/shell/alsa.sh -d
+bindsym F3  exec sh ~/.shepard/shell/alsa.sh -i
+bindsym F4  exec amixer set Capture toggle
 
 bindsym $mod+BackSpace exec sh ~/.shepard/shell/lock.sh
 bindsym $mod+Return exec urxvt
