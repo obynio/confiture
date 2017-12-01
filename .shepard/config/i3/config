@@ -1,7 +1,7 @@
 set $mod Mod1
 
 # font for window titles
-font pango:Meslo LG S DZ 16
+font pango:Meslo LG S DZ 10
 
 # use mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -111,4 +111,4 @@ bindsym $mod+q kill
 bindsym $mod+d exec rofi -show run
 bindsym $mod+p exec scrot -q 100 /data/pictures/%m:%d_%H:%M:%S.png
 
-exec_always --no-startup-id ~/.shepard/shell/polybar.sh
+exec_always --no-startup-id sh ~/.shepard/shell/polybar.sh

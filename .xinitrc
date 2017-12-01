@@ -11,8 +11,11 @@ xset s noblank
 xset b off
 
 # load xres config files
-xrdb -load ~/.shepard/config/xres/xres.conf
+xrdb -load ~/.shepard/config/xres/xres.conf &
 
+# start compton
+compton -b --config ~/.shepard/config/compton/config &
+ 
 # launch startup scripts
 sh ~/.shepard/shell/wallpaper.sh &
 

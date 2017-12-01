@@ -20,6 +20,11 @@ These configuration files support :
 
 I build it myself.
 
+> Plugin for urxvt ?
+
+Install `urxvt-perls` and move `.urxvt` to home dir.
+
+
 # Special thanks to
 
 * *La confiture*, because I like jam.
