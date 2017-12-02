@@ -76,11 +76,11 @@ label-unfocused-foreground = #666666
 label-unfocused-padding = 1
 
 label-visible = ●
-label-visible-padding = 2
+label-visible-padding = 1 
 
 label-urgent = ●
 label-urgent-foreground = #bd2c40
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 [module/cpu]
 type = internal/cpu

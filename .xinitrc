@@ -14,7 +14,7 @@ xset b off
 xrdb -load ~/.shepard/config/xres/xres.conf &
 
 # start compton
-compton -b --config ~/.shepard/config/compton/config &
+# compton -b --config ~/.shepard/config/compton/config &
  
 # launch startup scripts
 sh ~/.shepard/shell/wallpaper.sh &
