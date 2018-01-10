@@ -5,7 +5,7 @@ for file in ~/.shepard/config/zsh/*; do
 done
 
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
-    exec startx
+    exec ssh-agent startx
 fi
 
 true
