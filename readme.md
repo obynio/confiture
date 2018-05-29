@@ -34,4 +34,4 @@ Install `urxvt-perls` and move `.urxvt` to home dir.
 
 *“La culture, c’est comme la confiture, moins on en a, plus on l’étale.”*
 
-![alt tag](https://pool.sybiload.com/git/confiture/confiture_1.jpg)
+![alt tag](https://pool.obyn.io/git/confiture/confiture_1.jpg)
