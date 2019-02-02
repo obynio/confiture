@@ -91,8 +91,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # float windows
-for_window [title="File Operation Progress" class="Thunar"] floating enable
+for_window [class="Slack" instance="slack"] move workspace 9
 for_window [class="Ulauncher"] floating enable, move position center
+for_window [title="File Operation Progress" class="Thunar"] floating enable
 
 # misc configuration
 new_window pixel 3
@@ -115,17 +116,24 @@ bindsym F2  exec sh ~/.shepard/shell/alsa.sh -d
 bindsym F3  exec sh ~/.shepard/shell/alsa.sh -i
 bindsym F4  exec amixer set Capture toggle
 
-bindsym $mod+Return exec urxvt
+#bindsym XF86AudioMute           exec python3 ~/.shepard/shell/alsa.py -t
+#bindsym XF86AudioLowerVolume    exec python3 ~/.shepard/shell/alsa.py -d
+#bindsym XF86AudioRaiseVolume    exec python3 ~/.shepard/shell/alsa.py -i
+#bindsym XF86AudioMicMute        exec amixer set Capture toggle
+#bindsym XF86MonBrightnessUp     exec xbacklight -inc 10
+#bindsym XF86MonBrightnessDown   exec xbacklight -dec 10
+
 bindsym $mod+q kill
-# bindsym $mod+d exec rofi -show drun
+bindsym $mod+Return exec urxvt
 bindsym $mod+i exec betterlockscreen -l
 
-exec --no-startup-id ulauncher --hide-window
+exec --no-startup-id GDK_DPI_SCALE=1 ulauncher --hide-window
 exec_always --no-startup-id sh ~/.shepard/shell/polybar.sh
 exec_always --no-startup-id dunst -config ~/.shepard/config/dunst/dunstrc
-exec_always --no-startup-id xrdb -load ~/.shepard/config/xres/urxvt.conf
+exec_always --no-startup-id xrdb -load ~/.shepard/config/xres/xres.conf
 exec_always --no-startup-id betterlockscreen -w
 exec_always --no-startup-id compton
+exec_always --no-startup-id slack
 
 gaps inner 6
 gaps outer 6
