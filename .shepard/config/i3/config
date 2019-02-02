@@ -131,8 +131,8 @@ exec --no-startup-id GDK_DPI_SCALE=1 ulauncher --hide-window
 exec_always --no-startup-id sh ~/.shepard/shell/polybar.sh
 exec_always --no-startup-id dunst -config ~/.shepard/config/dunst/dunstrc
 exec_always --no-startup-id xrdb -load ~/.shepard/config/xres/xres.conf
+exec_always --no-startup-id compton -config ~/.shepard/config/compton/compton.conf
 exec_always --no-startup-id betterlockscreen -w
-exec_always --no-startup-id compton
 exec_always --no-startup-id slack
 
 gaps inner 6
