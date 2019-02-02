@@ -91,7 +91,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # float windows
-for_window [class="Slack" instance="slack"] move workspace 9
 for_window [class="Ulauncher"] floating enable, move position center
 for_window [title="File Operation Progress" class="Thunar"] floating enable
 
@@ -133,7 +132,6 @@ exec_always --no-startup-id dunst -config ~/.shepard/config/dunst/dunstrc
 exec_always --no-startup-id xrdb -load ~/.shepard/config/xres/xres.conf
 exec_always --no-startup-id compton -config ~/.shepard/config/compton/compton.conf
 exec_always --no-startup-id betterlockscreen -w
-exec_always --no-startup-id slack
 
 gaps inner 6
 gaps outer 6
