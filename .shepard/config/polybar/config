@@ -1,0 +1,254 @@
+; vim:ft=cfg
+;--------------------------------------------
+; bars                                      ;
+;--------------------------------------------
+
+[bar/base]
+dpi      = 154
+width    = 100%
+height   = 50
+offset-x = 0
+offset-y = 0
+monitor = ${env:MONITOR}
+
+background = #000f0f0f
+foreground = #d8d8d8
+
+border-bottom-size  = 0
+border-top-size     = 10
+
+padding-left       = 4
+padding-right      = 4
+
+font-0 = Roboto:size=8;3
+font-2 = Unifont:size:16;4
+font-1 = FontAwesome:size=9;4
+font-3 = MaterialIcons:size=9;4
+
+modules-left = date essid battery
+modules-center  = workspaces
+modules-right   = cpu ram volume
+
+fixed-center = true
+
+;--------------------------------------------
+; modules                                   ;
+;--------------------------------------------
+
+[module/network]
+type          = internal/network
+interface     = wlan0
+ping-interval = 3
+
+[module/date]
+type     = internal/date
+interval = 1.0
+time     = "%d.%m.%Y / %H:%M"
+label    = "   %time%"
+
+format         = <label>
+format-padding = 0
+
+label-background = #eceff1
+label-foreground = #241D30
+label-padding    = 6
+
+[module/battery]
+
+type = internal/battery
+full-at = 90
+poll-interval = 1
+
+format-charging = <animation-charging> <label-charging>
+format-charging-background = #241D30
+format-charging-foreground = #eceff1
+format-charging-padding-left = 2
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = #241D30
+format-discharging-foreground = #eceff1
+format-discharging-padding-left = 2
+
+format-full = <ramp-capacity> <label-full>
+format-full-background = #241D30
+format-full-foreground = #eceff1
+format-full-padding-left = 2
+
+label-charging = %percentage% %
+label-charging-padding-left = 2
+label-charging-padding-right = 6
+
+label-discharging = %percentage% %
+label-discharging-padding-left = 2
+label-discharging-padding-right = 6
+
+label-full = %percentage% %
+label-full-padding-left = 2
+label-full-padding-right = 6
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 1200
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+format-background = #241D30
+label =  
+label-padding-left = 6
+label-padding-right = 2
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #eceff1
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #eceff1
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #eceff1
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #eceff1
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #eceff1
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #eceff1
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #eceff1
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #eceff1
+
+[module/ram]
+type = internal/memory
+format = <label>
+format-foreground = #eceff1
+format-background = #241D30
+format-padding = 6
+format-prefix =  
+format-prefix-padding-right = 2
+label = %percentage_used% %
+
+[module/essid]
+inherit = module/network
+
+format-connected = <label-connected>
+format-connected-background   = #241D30
+format-connected-foreground   = #eceff1
+
+format-connected-prefix              = 
+format-connected-prefix-padding-left = 6
+
+label-connected               = "%essid%"
+label-connected-padding-left = 4
+label-connected-padding-right = 6
+
+format-disconnected = <label-disconnected>
+format-disconnected-background   = #241D30
+format-disconnected-foreground   = #eceff1
+
+format-disconnected-prefix              = 
+format-disconnected-prefix-padding-left = 6
+
+label-disconnected               = "disconnected"
+label-disconnected-padding-left = 4
+label-disconnected-padding-right = 6
+
+[module/paddinglite]
+type               = custom/text
+content            = |||
+content-foreground = #000f0f0f
+content-background = #000f0f0f
+
+[module/workspaces]
+
+type            = internal/i3
+format          = <label-state> <label-mode>
+index-sort      = true
+wrapping-scroll = false
+strip-wsnumbers = true
+
+label-mode-background = #241D30
+label-mode-foreground = #d8d8d8
+label-mode-padding    = 6
+
+label-focused            = %name%
+label-focused-background = #eceff1
+label-focused-foreground = #241D30
+label-focused-padding    = 6
+
+label-unfocused            = %name%
+label-unfocused-background = #241D30
+label-unfocused-foreground = #d8d8d8
+label-unfocused-padding    = 6
+
+label-visible            = %name%
+label-visible-background = #241D30
+label-visible-foreground = #d8d8d8
+label-visible-padding    = 6
+
+label-urgent            = %name%
+label-urgent-background = #6592fe
+label-urgent-foreground = #241D30
+label-urgent-padding    = 6
+
+[module/backlight]
+type = internal/xbacklight
+format = <ramp> <label>
+format-background = #241D30
+format-foreground = #eceff1
+format-padding = 6
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-padding-right = 2
+
+label = %percentage% %
+
+[module/volume]
+type = internal/alsa
+
+format-volume = <ramp-volume> <bar-volume>
+format-volume-background = #eceff1
+format-volume-padding = 6
+
+format-muted-prefix = 
+format-muted-prefix-padding-right = 3
+format-muted-background = #eceff1
+format-muted-foreground = #bcbfc0
+format-muted-padding = 6
+label-muted = ━━━━━━━━━━
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-foreground = #241D30
+ramp-volume-padding-right = 2
+
+bar-volume-width = 10
+bar-volume-gradient = false
+
+bar-volume-indicator = ━
+bar-volume-indicator-foreground = #241D30
+
+bar-volume-fill = ━
+bar-volume-fill-foreground = #241D30
+
+bar-volume-empty = ━
+bar-volume-empty-foreground = #bcbfc0
