@@ -1,0 +1,53 @@
+[global]
+    font = "Roboto 10"
+    allow_markup = yes
+    format = "<b>%s</b>\n%b"
+    sort = yes
+    indicate_hidden = yes
+    alignment = center
+    bounce_freq = 0
+    show_age_threshold = -1
+    show_indicators = false
+    word_wrap = yes
+    ignore_newline = no
+    geometry = "400x5-40-40"
+    transparency = 0
+    idle_threshold = 120
+    monitor = 0
+    sticky_history = yes
+    line_height = 0
+    separator_height = 0
+    separator_color = #ffffff
+    padding = 14
+    horizontal_padding = 8
+    startup_notification = false
+    browser = /usr/bin/google-chrome-stable 'about:blank'
+    hide_duplicates_count = true
+
+[frame]
+    width = 1
+    color = "#666666"
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+[urgency_low]
+    background = "#241D30"
+    foreground = "#6699cc"
+    frame_color = "#241D30"
+    timeout = 5
+
+[urgency_normal]
+    background = "#241D30"
+    foreground = "#eceff1"
+    frame_color = "#241D30"
+    timeout = 10
+
+[urgency_critical]
+    background = "#241D30"
+    foreground = "#f2777a"
+    frame_color = "#241D30"
+    timeout = 0
