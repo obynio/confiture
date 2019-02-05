@@ -2,6 +2,8 @@
     font = "Roboto 10"
     icon_position = left
     max_icon_size = 60
+    icon_path = /usr/share/icons/Papirus/32x32/status/:/usr/share/icons/Papirus/32x32/devices/
+
     format = "%b\n<i>%a</i>"
     ellipsize = end
     alignment = left
@@ -43,3 +45,7 @@
     foreground = "#f2777a"
     frame_color = "#241D30"
     timeout = 0
+
+[slack]
+appname = "Slack"
+new_icon = /usr/lib/slack/resources/app.asar.unpacked/src/static/app.ico
