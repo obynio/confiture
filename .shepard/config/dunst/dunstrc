@@ -1,26 +1,18 @@
 [global]
     font = "Roboto 10"
-    allow_markup = yes
-    format = "<b>%s</b>\n%b"
-    sort = yes
-    indicate_hidden = yes
-    alignment = center
-    bounce_freq = 0
+    icon_position = left
+    max_icon_size = 60
+    format = "%b\n<i>%a</i>"
+    ellipsize = end
+    alignment = left
     show_age_threshold = -1
     show_indicators = false
-    word_wrap = yes
-    ignore_newline = no
     geometry = "400x5-40-40"
-    transparency = 0
-    idle_threshold = 120
     monitor = 0
-    sticky_history = yes
-    line_height = 0
     separator_height = 0
-    separator_color = #ffffff
+    separator_color = #00000000
     padding = 14
-    horizontal_padding = 8
-    startup_notification = false
+    horizontal_padding = 14
     browser = /usr/bin/google-chrome-stable 'about:blank'
     hide_duplicates_count = true
 
@@ -36,7 +28,7 @@
 
 [urgency_low]
     background = "#241D30"
-    foreground = "#6699cc"
+    foreground = "#1db954"
     frame_color = "#241D30"
     timeout = 5
 
