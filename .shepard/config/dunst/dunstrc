@@ -1,10 +1,10 @@
 [global]
-    font = "Roboto 10"
+    font = "Roboto 11"
     icon_position = left
     max_icon_size = 60
     icon_path = /usr/share/icons/Papirus/32x32/status/:/usr/share/icons/Papirus/32x32/devices/
     word_wrap = true
-    format = "%b<i>%a</i>"
+    format = "%b\n<i>%a</i>"
     ellipsize = end
     alignment = left
     show_age_threshold = -1
