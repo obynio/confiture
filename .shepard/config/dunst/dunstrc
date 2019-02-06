@@ -49,7 +49,7 @@
 [slack]
     appname = "Slack"
     format = "%b"
-    new_icon = /usr/lib/slack/resources/app.asar.unpacked/src/static/app.ico
+    new_icon = /usr/lib/slack/resources/app.asar.unpacked/src/static/slack.png
 
 [chrome]
     appname = "Google Chrome"
