@@ -3,8 +3,8 @@
     icon_position = left
     max_icon_size = 60
     icon_path = /usr/share/icons/Papirus/32x32/status/:/usr/share/icons/Papirus/32x32/devices/
-
-    format = "%b\n<i>%a</i>"
+    word_wrap = true
+    format = "%b<i>%a</i>"
     ellipsize = end
     alignment = left
     show_age_threshold = -1
@@ -47,5 +47,10 @@
     timeout = 0
 
 [slack]
-appname = "Slack"
-new_icon = /usr/lib/slack/resources/app.asar.unpacked/src/static/app.ico
+    appname = "Slack"
+    format = "%b"
+    new_icon = /usr/lib/slack/resources/app.asar.unpacked/src/static/app.ico
+
+[chrome]
+    appname = "Google Chrome"
+    format = "%b"
