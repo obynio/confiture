@@ -38,7 +38,7 @@ fixed-center = true
 [module/network]
 type          = internal/network
 interface     = wlan0
-ping-interval = 3
+interval = 3
 
 [module/date]
 type     = internal/date
